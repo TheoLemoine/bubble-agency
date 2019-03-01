@@ -1,6 +1,6 @@
 <?php
 
-require_once '../libs/models/Ram.php';
+require_once 'libs/models/Ram.php';
 
 $login = 'RAM de Vincennes';
 $mdp = 'hI98jK';

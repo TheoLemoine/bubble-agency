@@ -79,7 +79,7 @@ $rams = $pdo
             ram <br>
             <select name="ram">
                 <?php foreach ($rams as $ram) : ?>
-                    <option value="<?= $ram->id ?>"><?= htmlspecialchars($ram->login) ?></option>
+                    <option value="<?= $ram->id ?>" <?= $ram->id === $_SESSION['user']->ram_id ? 'selected' : '' ?>><?= htmlspecialchars($ram->login) ?></option>
                 <?php endforeach; ?>
             </select><br>
         </label>
