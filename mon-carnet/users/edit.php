@@ -13,12 +13,27 @@ if(!isset($_SESSION['user']))
     die;
 }
 
+// verify changes
+$stm = $pdo->prepare('SELECT * FROM user WHERE id=:id');
+$stm->execute([
+    ':id' => $_SESSION['user']->id,
+]);
+$user = $stm->fetchObject(User::class);
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'
+    // everything is set
     && isset($_POST['nom'])
     && isset($_POST['prenom'])
     && isset($_POST['mail'])
     && isset($_POST['ram'])
-    && filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL))
+    // something has changed
+    && $user->nom != $_POST['nom']
+    && $user->prenom != $_POST['prenom']
+    && $user->mail != $_POST['mail']
+    && $user->ram != $_POST['ram']
+    // mail is still valid
+    && filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)
+)
 {
 
     $stm = $pdo->prepare('UPDATE user SET nom=:nom, prenom=:prenom, mail=:mail, ram_id=:ram, validated=0 WHERE id=:id');

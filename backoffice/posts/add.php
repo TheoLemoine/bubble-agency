@@ -2,6 +2,7 @@
 
 
 require_once '../../libs/get_pdo.php';
+require_once '../../libs/models/Ram.php';
 
 session_start();
 

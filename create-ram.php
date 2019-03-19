@@ -2,8 +2,8 @@
 
 require_once 'libs/models/Ram.php';
 
-$login = 'RAM de Vincennes';
-$mdp = 'hI98jK';
+$login = 'RAM test';
+$mdp = 'test';
 
 $pdo = new PDO('mysql:dbname=bubble-agency;host=127.0.0.1;charset=utf8', 'root', '');
 

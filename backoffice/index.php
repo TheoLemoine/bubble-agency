@@ -2,6 +2,7 @@
 
 require_once '../libs/models/Ram.php';
 require_once '../libs/models/User.php';
+require_once '../libs/models/Post.php';
 require_once '../libs/get_pdo.php';
 
 session_start();
@@ -30,12 +31,18 @@ if(!isset($_SESSION['ram']))
 }
 
 // get all users in the RAM
-
 $stm = $pdo->prepare('SELECT * FROM user WHERE ram_id=:ram_id AND validated  = 0');
 $stm->execute([
     ':ram_id' => $_SESSION['ram']->id,
 ]);
 $users = $stm->fetchAll(PDO::FETCH_CLASS, User::class);
+
+// get all posts in ram
+$stm = $pdo->prepare('SELECT * FROM post WHERE ram_id=:ram_id');
+$stm->execute([
+    ':ram_id' => $_SESSION['ram']->id,
+]);
+$posts = $stm->fetchAll(PDO::FETCH_CLASS, Post::class);
 
 ?>
 
@@ -87,5 +94,15 @@ $users = $stm->fetchAll(PDO::FETCH_CLASS, User::class);
             <button type="submit">Ajouter l'article</button>
         </form>
     </div>
+
+    <h1>Tout les posts</h1>
+
+    <?php foreach ($posts as $post) : ?>
+        <h2><?= htmlspecialchars($post->titre) ?></h2>
+        <p>
+            <?= htmlspecialchars($post->texte) ?>
+        </p>
+
+    <?php endforeach; ?>
 </body>
 </html>
