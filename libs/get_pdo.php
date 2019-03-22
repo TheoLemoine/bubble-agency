@@ -2,5 +2,13 @@
 
 function get_pdo(): PDO
 {
-    return new PDO('mysql:dbname=bubble-agency;host=127.0.0.1;charset=utf8', 'root', '');
+    $conf = [
+        'dbname' => 'bubble-agency',
+        'host' => 'localhost',
+        'charset' => 'utf8',
+        'user' => 'root',
+        'pass' => '',
+    ];
+
+    return new PDO('mysql:dbname=' . $conf['dbname']. ';host=' . $conf['host']. ';charset=' . $conf['charset'], $conf['user'], $conf['pass']);
 }

@@ -1,8 +1,9 @@
 <?php
 
 require_once 'libs/models/Ram.php';
+require_once 'libs/get_pdo.php';
 
-$pdo = new PDO('mysql:dbname=bubble-agency;host=127.0.0.1;charset=utf8', 'root', '');
+$pdo = get_pdo();
 
 $stm = $pdo->prepare('INSERT INTO ram (login, mdp) VALUES(:login, :mdp)');
 
