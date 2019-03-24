@@ -1,0 +1,260 @@
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('../fonts/kodchasan/Kodchasan-ExtraLight.woff2') format('woff2'),
+  url('../fonts/kodchasan/Kodchasan-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0 0;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  font-family: 'Kodchasan', sans-serif;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- HEADER ------------------------------------------ */
+
+/* ------------------------------------------------------------------------------------ */
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2vw;
+  background-color: #fee9ff;
+}
+
+.title{
+  display: flex;
+}
+
+.title img {
+  width: 5vw;
+  margin-right: 2vw;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ----------------------------------- MAIN ------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3vw;
+  background-color: #ffbb99;
+}
+
+nav a {
+  width: 50%;
+  padding: 1vw;
+  transition: 0.3s ease;
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+.active {
+  background-color: #ffccb3;
+}
+
+nav a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.first-line{
+  max-width: 70%;
+  text-align: center;
+}
+
+.fat {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 60%;
+  margin: 5vw auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+.assmat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+}
+
+.cadre {
+  width: 100%;
+  margin-top: 2vw;
+  border: solid 2px #a0a0a0;
+  background-color: #eeeeee;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5vw;
+  margin: 0;
+}
+
+.line:nth-child(2n) {
+  background-color: #c9c9c9;
+}
+
+.valider-refuser a img{
+  width: 1.5vw;
+  margin: 0 0.5vw;
+}
+
+.voirtout {
+  margin-top: 2vw;
+  transition: 0.3s ease;
+  text-decoration: none;
+  color: black;
+}
+
+.voirtout:hover {
+  text-decoration: underline;
+}
+
+.ecrire-article {
+  width: 50%;
+}
+
+.ecrire-article .cadre {
+  padding: 2vw;
+}
+
+input[type=text] {
+  width: 90%;
+  margin-bottom: 2vw;
+}
+
+button[type=submit] {
+  border: none;
+  border-radius: 10px;
+  padding: 0.5vw 1vw;
+  margin-top: 2vw;
+  background-color: #a0a0a0;
+  cursor: pointer;
+}
+
+.box-article {
+  width: 60%;
+  margin: 4vw auto;
+  margin-bottom: 6vw;
+  padding: 2vw;
+  border: solid 4px #5b2c5b;
+}
+
+.article-publie{
+  width: 95%;
+  padding: 3vw;
+  margin: 2vw auto;
+  background-color: #ffbb99;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- MEDIA QUERIES ----------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- 1200 ----------------------------------- */
+
+@media screen and (max-width: 1200px) {
+  /* MAIN */
+  .fat{
+    width: 80%;
+  }
+}
+
+/* ---------------------------------- 992 ----------------------------------- */
+
+@media screen and (max-width: 992px) {
+  /* MAIN */
+  .valider-refuser a img{
+    width: 3vw;
+  }
+  .ecrire-article{
+    width: 50%;
+  }
+  .box-article{
+    width: 70%;
+  }
+}
+
+/* ---------------------------------- 768 ----------------------------------- */
+
+@media screen and (max-width: 768px) {
+  /* HEADER */
+  h1 {
+    font-size: 1.4rem;
+  }
+  header img {
+    width: 8vw;
+  }
+  /* MAIN */
+  .fat{
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+  .assmat{
+    width: 70%;
+  }
+  .ecrire-article{
+    width: 60%;
+  }
+  button[type=submit]{
+    padding: 1vw 1.8vw;
+    margin: 4vw;
+  }
+  .box-article{
+    width: 85%;
+  }
+}
+
+/* ---------------------------------- 576 ----------------------------------- */
+
+@media screen and (max-width: 576px) {
+  /* MAIN */
+  .ecrire-article{
+    width: 85%;
+  }
+}

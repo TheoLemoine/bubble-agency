@@ -1,0 +1,176 @@
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('../fonts/kodchasan/Kodchasan-ExtraLight.woff2') format('woff2'),
+  url('../fonts/kodchasan/Kodchasan-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0 0;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  font-family: 'Kodchasan', sans-serif;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- HEADER ------------------------------------------ */
+
+/* ------------------------------------------------------------------------------------ */
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2vw;
+  background-color: #fee9ff;
+}
+
+.title{
+  display: flex;
+}
+
+.title img {
+  width: 5vw;
+  margin-right: 2vw;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ----------------------------------- MAIN ------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3vw;
+  background-color: #ffbb99;
+}
+
+nav a {
+  width: 50%;
+  padding: 1vw;
+  transition: 0.3s ease;
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+.active {
+  background-color: #ffccb3;
+}
+
+nav a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.fat {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 60%;
+  margin: 5vw auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+.cadre {
+  width: 40%;
+  margin-top: 2vw;
+  border: solid 2px #a0a0a0;
+  background-color: #eeeeee;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5vw;
+  margin: 0;
+}
+
+.line:nth-child(2n) {
+  background-color: #c9c9c9;
+}
+
+.supprimer{
+  transition: 0.2s ease;
+  text-decoration: none;
+  color: black;
+}
+
+.supprimer:hover{
+  color: white;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- MEDIA QUERIES ----------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- 1200 ----------------------------------- */
+
+@media screen and (max-width: 1200px) {
+  /* MAIN */
+}
+
+/* ---------------------------------- 992 ----------------------------------- */
+
+@media screen and (max-width: 992px) {
+  /* MAIN */
+  .cadre{
+    width: 60%;
+  }
+}
+
+/* ---------------------------------- 768 ----------------------------------- */
+
+@media screen and (max-width: 768px) {
+  /* HEADER */
+  h1 {
+    font-size: 1.4rem;
+  }
+  header img {
+    width: 8vw;
+  }
+  /* MAIN */
+  .cadre{
+    width: 85%;
+  }
+}
+
+/* ---------------------------------- 576 ----------------------------------- */
+
+@media screen and (max-width: 576px) {
+  /* MAIN */
+}

@@ -25,27 +25,70 @@ $users = $stm->fetchAll(PDO::FETCH_CLASS, User::class);
 ?>
 
 <!doctype html>
-<html lang="fr">
-<head>
+  <html lang="fr">
+
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <table>
-        <tr>
-            <th>nom</th>
-            <th>prénom</th>
-        </tr>
-        <?php foreach ($users as $user) : ?>
-            <tr>
-                <td><?= htmlspecialchars($user->nom) ?></td>
-                <td><?= htmlspecialchars($user->prenom) ?></td>
-                <td><a href="users/delete.php?uid=<?= htmlspecialchars($user->id) ?>">supprimer</a></td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
-</body>
-</html>
+    <title>Mon Carnet d'assmat - Espace RAM</title>
+    <link rel="stylesheet" href="../css/style-backoffice-users.css">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-16x16.png" sizes="16x16" />
+  </head>
+
+  <body>
+
+    <!-- --------------------------------------------------------------- -->
+    <!-- -------------------------- HEADER  ---------------------------- -->
+    <!-- --------------------------------------------------------------- -->
+
+    <header>
+
+      <div class="title">
+        <img src="../images/logo/logo-app.svg">
+        <h1>Mon Carnet d'assmat</h1>
+      </div>
+
+      <h2>RAM de Bry-sur-Marne</h2>
+
+    </header>
+
+    <!-- --------------------------------------------------------------- -->
+    <!-- -------------------------- MAIN  ---------------------------- -->
+    <!-- --------------------------------------------------------------- -->
+
+    <main>
+
+      <nav>
+        <a href="index.php">Accueil</a>
+        <a href="#" class="active">Liste des assmats</a>
+      </nav>
+
+        <h3>Liste des assmats</h3>
+        <div class="cadre">
+          <div class="line">
+            <strong>Nom / Prénom</strong>
+          </div>
+          <?php foreach ($users as $user) : ?>
+          <div class="line">
+            <div>
+              <span>
+                <?= htmlspecialchars($user->nom) ?>
+                </span>
+              <span>
+                <?= htmlspecialchars($user->prenom) ?>
+                </span>
+            </div>
+            <div>
+              <a href="users/delete.php?uid=<?= htmlspecialchars($user->id) ?>" class="supprimer">Supprimer</a>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+
+    </main>
+
+  </body>
+
+  </html>

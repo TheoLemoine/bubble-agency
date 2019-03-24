@@ -59,47 +59,88 @@ $rams = $pdo
 ?>
 
 <!doctype html>
-<html lang="fr">
-<head>
+  <html lang="fr">
+
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <a href="../index.php">Home</a>
+    <title>Mon Carnet d'assmat - Le blog</title>
+    <link rel="stylesheet" href="../../css/style-edit-infos.css">
+    <link rel="icon" type="image/png" href="../../images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../images/favicon/favicon-16x16.png" sizes="16x16" />
+  </head>
 
-    <?php if (isset($ok) && $ok) : ?>
+  <body>
+
+    <!-- --------------------------------------------------------------- -->
+    <!-- ------------------------- HEADER  ----------------------------- -->
+    <!-- --------------------------------------------------------------- -->
+
+    <header>
+
+      <a href="../../index.html" class="logo">
+        <img src="../../images/logo/logo-app.svg" alt="logo">
+      </a>
+
+      <h1 class="h1">
+        <img src="../../images/losanges/losange-violet-creux.svg" alt="" class="losange-titre">
+        <span>Modifiez vos informations</span>
+      </h1>
+
+      <div class="parametres">
+        <a href="../../index.html" class="site">Retour au site</a>
+      </div>
+
+    </header>
+
+    <!-- --------------------------------------------------------------- -->
+    <!-- ------------------------- HEADER  ----------------------------- -->
+    <!-- --------------------------------------------------------------- -->
+
+    <main>
+
+      <a href="../index.php" class="retour-accueil">Retour</a>
+
+      <div class="box">
+        <?php if (isset($ok) && $ok) : ?>
         <div>Vos modifications on bien été prises en compte</div>
-    <?php endif; ?>
+        <?php endif; ?>
 
-    <form action="" method="POST">
-        <label for="">
-            nom <br>
-            <input type="text" name="nom" value="<?= htmlspecialchars($_SESSION['user']->nom) ?>"><br>
-        </label>
-
-        <label for="">
-            prenom <br>
-            <input type="text" name="prenom" value="<?= htmlspecialchars($_SESSION['user']->prenom) ?>"><br>
-        </label>
-
-        <label for="">
-            mail <br>
-            <input type="email" name="mail" value="<?= htmlspecialchars($_SESSION['user']->mail) ?>"><br>
-        </label>
-
-        <label for="">
-            ram <br>
+        <form action="" method="POST">
+            <input type="text" name="nom" value="<?= htmlspecialchars($_SESSION['user']->nom) ?>">
+            <input type="text" name="prenom" value="<?= htmlspecialchars($_SESSION['user']->prenom) ?>">
+            <input type="email" name="mail" value="<?= htmlspecialchars($_SESSION['user']->mail) ?>">
             <select name="ram">
                 <?php foreach ($rams as $ram) : ?>
                     <option value="<?= $ram->id ?>" <?= $ram->id === $_SESSION['user']->ram_id ? 'selected' : '' ?>><?= htmlspecialchars($ram->login) ?></option>
                 <?php endforeach; ?>
-            </select><br>
-        </label>
+            </select>
 
-        <button type="submit">Modifier vous information</button>
-    </form>
-</body>
-</html>
+          <button type="submit">Modifier mes infos</button>
+        </form>
+      </div>
+
+    </main>
+
+    <!-- --------------------------------------------------------------- -->
+    <!-- -------------------------- FOOTER  ---------------------------- -->
+    <!-- --------------------------------------------------------------- -->
+
+    <footer>
+      <img src="../../images/vagues/vague-orange-haut.svg" class="vague" alt="">
+
+      <h3><span>Téléchargez l'application</span><img src="../../images/losanges/losange-violet-creux.svg" class="losange-titre-footer" alt=""></h3>
+      <div class="store">
+        <a href="#"><img src="../../images/store/google-play.png" alt="lien google play"></a>
+        <a href="#"><img src="../../images/store/play-store.png" alt="lien play store"></a>
+      </div>
+      <a href="https://www.facebook.com/BubbleAgency77/" target="_blank"><img src="../../images/icones-footer/facebook.svg" class="facebook" alt="lien facebook"></a>
+
+      <p class="end">Conçu, créé, designé et dévelopé par Bubble Agency, tout droits réservés.</p>
+    </footer>
+
+  </body>
+
+  </html>
+

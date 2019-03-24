@@ -14,34 +14,57 @@ $rams = get_pdo()
 ?>
 
 <!doctype html>
-<html lang="fr">
-<head>
+  <html lang="fr">
+
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<div>
-    <h1>Connection</h1>
-    <form action="index.php" method="POST">
-        <label for="">
-            ram <br>
-            <select name="ram">
+    <title>Mon Carnet d'assmat - Identifiez vous</title>
+    <link rel="stylesheet" href="../css/style-backoffice-connect.css">
+    <link rel="icon" type="image/png" href="../../../images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../../images/favicon/favicon-16x16.png" sizes="16x16" />
+  </head>
+
+  <body>
+
+    <!-- --------------------------------------------------------------- -->
+    <!-- -------------------------- HEADER  ---------------------------- -->
+    <!-- --------------------------------------------------------------- -->
+
+    <header>
+
+        <img src="../images/logo/logo-app.svg">
+        <h1>Mon Carnet d'assmat</h1>
+
+    </header>
+
+    <!-- --------------------------------------------------------------- -->
+    <!-- --------------------------- MAIN  ----------------------------- -->
+    <!-- --------------------------------------------------------------- -->
+
+    <main>
+
+      <div class="content">
+        <h2>Connection</h2>
+        <form action="index.php" method="POST" class="form">
+          <label for="">RAM<select name="ram">
                 <?php foreach ($rams as $ram) : ?>
                     <option value="<?= $ram->id ?>"><?= htmlspecialchars($ram->login) ?></option>
                 <?php endforeach; ?>
-            </select><br>
+            </select>
         </label>
 
-        <label for="">
-            mdp <br>
+          <label for="">Mot de passe
             <input type="password" name="mdp"><br>
         </label>
 
-        <button type="submit">Se connecter</button>
-    </form>
-</div>
-</body>
-</html>
+          <button type="submit">Se connecter</button>
+        </form>
+      </div>
+
+    </main>
+
+  </body>
+
+  </html>

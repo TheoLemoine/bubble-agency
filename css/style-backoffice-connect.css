@@ -1,0 +1,192 @@
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('../fonts/kodchasan/Kodchasan-ExtraLight.woff2') format('woff2'),
+  url('../fonts/kodchasan/Kodchasan-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Annie';
+  src: url('../fonts/annie/AnnieUseYourTelescope-Regular.woff2') format('woff2'),
+  url('../fonts/annie/AnnieUseYourTelescope-Regular.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0 0;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  font-family: 'Kodchasan', sans-serif;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- HEADER ------------------------------------------ */
+
+/* ------------------------------------------------------------------------------------ */
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2vw;
+  background-color: #fee9ff;
+}
+
+header img {
+  width: 5vw;
+  margin-right: 2vw;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ----------------------------------- MAIN ------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5vw;
+}
+
+.form {
+  width: 30%;
+  padding: 2vw 5vw;
+  border-radius: 10px;
+  background-color: #fee9ff;
+}
+
+input,
+select {
+  display: block;
+  width: 20vw;
+  height: 3vw;
+  margin: 2vw auto;
+  padding-left: 2vw;
+  border: none;
+  border-radius: 10px;
+  transition: 0.2s ease;
+  font-size: 1rem;
+  font-family: 'Kodchasan';
+  background-color: #f4d3f4;
+}
+
+button[type=submit] {
+  display: block;
+  width: 9vw;
+  height: 3vw;
+  margin: auto;
+  border: none;
+  border-radius: 10px;
+  transition: 0.7s ease;
+  font-size: 1rem;
+  font-family: 'Kodchasan';
+  background-color: #d2d2d2;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- MEDIA QUERIES ----------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- 1200 ----------------------------------- */
+
+@media screen and (max-width: 1200px) {
+  /* MAIN */
+  .form {
+    width: 40%;
+  }
+  input,
+  select {
+    width: 25vw;
+  }
+  button[type=submit] {
+    width: 18vw;
+  }
+}
+
+/* ---------------------------------- 992 ----------------------------------- */
+
+@media screen and (max-width: 992px) {
+  /* MAIN */
+  .form {
+    width: 50%;
+  }
+  input,
+  select {
+    width: 28vw;
+    height: 4vw;
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------------------------------- 768 ----------------------------------- */
+
+@media screen and (max-width: 768px) {
+  /* HEADER */
+  h1 {
+    font-size: 1.4rem;
+  }
+  header img {
+    width: 8vw;
+  }
+  /* MAIN */
+  .form{
+    width: 70%;
+    padding: 5vw;
+  }
+  input {
+    width: 70%;
+    height: 6vw;
+  }
+  button[type=submit] {
+    width: 60%;
+    height: 5vw;
+    margin-bottom: 5vw;
+  }
+  select {
+    width: 70%;
+    height: 6vw;
+    margin-bottom: 5vw;
+  }
+}
+
+/* ---------------------------------- 576 ----------------------------------- */
+
+@media screen and (max-width: 576px) {
+  /* MAIN */
+  input {
+    font-size: 0.8rem;
+    height: 8vw;
+    width: 90%;
+    margin-top: 5vw;
+  }
+  button[type=submit] {
+    height: 6vw;
+    font-size: 0.7rem;
+    margin-top: 7vw;
+  }
+  select {
+    width: 90%;
+    height: 8vw;
+    margin: 5vw auto;
+  }
+
+}

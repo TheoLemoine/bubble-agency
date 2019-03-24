@@ -1,0 +1,1483 @@
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('../fonts/kodchasan/Kodchasan-ExtraLight.woff2') format('woff2'),
+  url('../fonts/kodchasan/Kodchasan-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0 0;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  font-family: 'Kodchasan', sans-serif;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- HOME -------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+header {
+  position: relative;
+  overflow-x: hidden;
+  z-index: 2;
+  margin: 0 0;
+}
+
+.progress-scroll {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  width: 10px;
+  height: 3px;
+  background-color: #FCCC8E;
+}
+
+.logo-login {
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2vw;
+}
+
+.logo img {
+  width: 4vw;
+}
+
+.login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+}
+
+.login a::before,
+.login a::after {
+  content: '';
+  position: absolute;
+  top: 90%;
+  width: 50%;
+  transition: ease 0.3s;
+  border-bottom: solid black 2px;
+}
+
+.login a::before {
+  left: -50%;
+}
+
+.login a::after {
+  left: 100%;
+}
+
+.login a {
+  position: relative;
+  overflow-x: hidden;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.login a:hover:before {
+  left: 0;
+}
+
+.login a:hover:after {
+  left: 50%;
+}
+
+h1 {
+  margin-top: 2vw;
+  margin-bottom: 0;
+  font-size: 4rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.titreandmockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  margin: auto;
+}
+
+.mockup1 {
+  position: relative;
+  width: 15vw;
+}
+
+.store {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 9000;
+  left: 8vw;
+  top: 15vw;
+  width: 30vw;
+}
+
+.store a {
+  width: 30%;
+}
+
+.store img {
+  position: relative;
+  z-index: 9000;
+  width: 100%;
+  margin: 1vw auto;
+  border: solid #dddddd 1px;
+  transition: ease 0.3s;
+  box-shadow: 6px 5px 1px #ffbb99;
+}
+
+.store img:hover {
+  transition: ease 0.3s;
+  box-shadow: 0 0 0 #ffbb99;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  position: fixed;
+  right: 1vw;
+  top: 9vw;
+  z-index: 8000;
+  height: 60vh;
+  width: 20vw;
+}
+
+.menu-home::before {
+  content: 'Accueil';
+  visibility: hidden;
+  transition: 0.5s ease;
+}
+
+.menu-fonction::before {
+  content: 'Les fonctionnalités';
+  visibility: hidden;
+  transition: 0.5s ease;
+}
+
+.menu-humain::before {
+  content: "Axé sur l'humain";
+  visibility: hidden;
+  transition: 0.5s ease;
+}
+
+.menu-ram::before {
+  content: 'Un réseau de RAM';
+  visibility: hidden;
+  transition: 0.5s ease;
+}
+
+.menu-equipe::before {
+  content: "L'équipe";
+  visibility: hidden;
+  transition: 0.5s ease;
+}
+
+.nav [class^=menu] {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: transparent;
+}
+
+.nav [class^=menu]:hover::before {
+  visibility: visible;
+  transition: 0.5s ease;
+  color: black;
+}
+
+.nav [class^=menu] img {
+  width: 3.5vw;
+  margin-right: 4vw;
+  margin-left: 1vw;
+  transition: 0.8s ease;
+}
+
+.nav [class^=menu]:hover img {
+  transform: rotate(360deg);
+  transition: 0.8s ease;
+}
+
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 100vw;
+  height: 1vh;
+  z-index: 8000;
+  background: none;
+}
+
+.traits {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  z-index: 100;
+  top: 6vw;
+  right: 4vw;
+  width: 8vw;
+  height: 6vw;
+}
+
+.traits span {
+  width: 100%;
+  height: 0.8vw;
+  transition: transform 0.7s ease, opacity 0.4s ease;
+  border-radius: 8px;
+  background-color: #6d376a;
+}
+
+.trait1-active {
+  transform: translateY(2.6vw) rotate(45deg);
+}
+
+.trait2-active {
+  transform: translateX(3vw);
+  opacity: 0;
+}
+
+.trait3-active {
+  transform: translateY(-2.6vw) rotate(-45deg);
+}
+
+.menu-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  padding: 23vw 0;
+  top: -2.5vw;
+  right: -102.5vw;
+  transition: 0.7s ease;
+  background-color: rgba(254, 233, 255, 0.9);
+}
+
+.menu-mobile-active {
+  right: -2.5vw;
+}
+
+.menu-mobile a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: black;
+}
+
+.menu-mobile a {
+  text-decoration: none;
+  color: black;
+}
+
+.blog {
+  margin: 0 4vw;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* ----------------------------- LOSANGES HOME --------------------------------- */
+
+[class^=losange] {
+  position: absolute;
+  z-index: 1;
+  width: 30px;
+}
+
+.losange1 {
+  top: 30vh;
+  left: 10vw;
+}
+
+.losange2 {
+  top: 50vh;
+  left: 70vw;
+  transform: rotate(30deg);
+}
+
+.losange3 {
+  top: 60vh;
+  left: 30vw;
+}
+
+.losange4 {
+  top: 10vh;
+  left: 50vw;
+}
+
+.losange5 {
+  top: 60vh;
+  left: 80vw;
+  transform: rotate(-22deg);
+}
+
+.losange6 {
+  top: 70vh;
+  left: 20vw;
+}
+
+.losange7 {
+  top: 20vh;
+  left: 60vw;
+}
+
+.losange8 {
+  top: 24vh;
+  left: 22vw;
+  transform: rotate(72deg);
+}
+
+.losange9 {
+  top: 28vh;
+  left: 35vw;
+  transform: rotate(12deg);
+}
+
+.losange10 {
+  top: 20vh;
+  left: 76vw;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* --------------------------------- INTRO -------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+.intro {
+  position: relative;
+  top: -2vw;
+  z-index: 2;
+  width: 100%;
+  padding-top: 8vw;
+  padding-bottom: 4vw;
+  background-color: #ffbb99;
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.losange-titre {
+  position: relative;
+  z-index: 1;
+  left: 1vw;
+  width: 3vw;
+}
+
+h3 span {
+  position: relative;
+  z-index: 5;
+}
+
+.mockup2 {
+  width: 25vw;
+  margin-left: 5vw;
+}
+
+.texte-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  margin-right: 5vw;
+}
+
+.store2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 25vw;
+}
+
+.store2 img {
+  width: 10vw;
+  margin-top: 3vw;
+  border: solid #dddddd 1px;
+  transition: ease 0.3s;
+  box-shadow: 6px 5px 1px #aaaaaa;
+}
+
+.store2 img:hover {
+  transition: ease 0.3s;
+  box-shadow: 0 0 0 #aaaaaa;
+}
+
+.vague-move-haut {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: -30%;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+}
+
+.intro-vh1 {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-size: 100vw;
+  background-image: url(../images/vagues/vague-violet-haut-bis.svg);
+  background-repeat: repeat no-repeat;
+  background-position: bottom;
+  opacity: 0.5;
+}
+
+.intro-vh2 {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  animation: move_wave 15s linear infinite;
+  transform-origin: center bottom;
+  background-size: 100vw;
+  background-image: url(../images/vagues/vague-violet-haut.svg);
+  background-repeat: repeat no-repeat;
+  background-position: bottom;
+  opacity: 0.4;
+}
+
+.intro-vh3 {
+  position: absolute;
+  left: -100%;
+  top: 1px;
+  width: 200%;
+  height: 100%;
+  animation: move_wave2 12s linear infinite;
+  transform-origin: center bottom;
+  background-size: 100vw;
+  background-image: url(../images/vagues/vague-orange-haut.svg);
+  background-repeat: repeat no-repeat;
+  background-position: bottom;
+}
+
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.8);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+@keyframes move_wave2 {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(25%) translateZ(0) scaleY(0.7);
+  }
+  100% {
+    transform: translateX(50%) translateZ(0) scaleY(1);
+  }
+}
+
+.vague-move-bas {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+}
+
+.intro-vb1 {
+  position: absolute;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  animation: move_wave2 15s linear infinite;
+  transform-origin: top;
+  background-size: 100vw;
+  background-image: url(../images/vagues/vague-jaune-bas.svg);
+  background-repeat: repeat no-repeat;
+  background-position: top;
+  opacity: 0.5;
+}
+
+.intro-vb2 {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 200%;
+  height: 100%;
+  animation: move_wave 15s linear infinite;
+  transform-origin: top;
+  background-size: 100vw;
+  background-image: url(../images/vagues/vague-orange-bas.svg);
+  background-repeat: repeat no-repeat;
+  background-position: top;
+}
+
+
+/* ------------------------------------------------------------------------------------ */
+
+/* --------------------------------- FONCTION ----------------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+.fonction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding-top: 18vw;
+}
+
+.fonction h3 {
+  margin-top: 1vw;
+}
+
+.fonction [class^=fonction] {
+  position: relative;
+  z-index: 2;
+  width: 24vw;
+  padding: 10px 30px;
+  text-align: center;
+}
+
+.fonction-orange {
+  left: 1vw;
+  background-color: #ffbb99;
+  box-shadow: 10px 5px 8px #ffbb99;
+}
+
+.fonction-rose {
+  top: -6vw;
+  z-index: 10;
+  background-color: #f4d3f4;
+  box-shadow: 10px 5px 8px #cc9dc8;
+}
+
+.fonction-violet {
+  left: -1vw;
+  background-color: #cc9dc8;
+  box-shadow: 10px 5px 8px #f4d3f4;
+}
+
+/* ----------------------------- LOSANGES FONCTION --------------------------------- */
+
+.losange11 {
+  top: 30vh;
+  left: 10vw;
+}
+
+.losange12 {
+  top: 60vh;
+  left: 17vw;
+  transform: rotate(30deg);
+}
+
+.losange13 {
+  top: 68vh;
+  left: 50vw;
+}
+
+.losange14 {
+  top: 10vh;
+  left: 70vw;
+}
+
+.losange15 {
+  top: 60vh;
+  left: 80vw;
+  transform: rotate(-22deg);
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ----------------------------------- HUMAIN ----------------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+.humain {
+  position: relative;
+  padding: 7vw 0;
+  margin-top: 18vw;
+  background-color: #f4d3f4;
+}
+
+.humain-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.humain-content-texte {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60vw;
+  margin-top: 2vw;
+}
+
+.humain-content-texte p {
+  width: 40%;
+}
+
+.humain-vh1 {
+  position: absolute;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background-size: 100vw;
+  background-image: url(../images/vagues/vague-violet-haut.svg);
+  animation: move_wave2 15s linear infinite;
+  transform-origin: center bottom;
+  background-repeat: repeat no-repeat;
+  background-position: bottom;
+  opacity: 0.5;
+}
+
+.humain-vh2 {
+  background-size: 100vw;
+  background-image: url(../images/vagues/vague-rose-haut.svg);
+  animation: move_wave 15s linear infinite;
+  transform-origin: center bottom;
+  position: absolute;
+  left: 0;
+  top: 1%;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: bottom;
+}
+
+.humain-vb1 {
+  position: absolute;
+  animation: move_wave2 15s linear infinite;
+  transform-origin: center top;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background-size: 100vw;
+  background-image: url(../images/vagues/vague-orange-bas.svg);
+  background-repeat: repeat no-repeat;
+  background-position: top;
+  opacity: 0.5;
+}
+
+.humain-vb2 {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 200%;
+  height: 100%;
+  animation: move_wave 15s linear infinite;
+  transform-origin: center top;
+  background-size: 100vw;
+  background-image: url(../images/vagues/vague-rose-bas.svg);
+  background-repeat: repeat no-repeat;
+  background-position: top;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ------------------------------------- RAM ------------------------------------------ */
+
+/* ------------------------------------------------------------------------------------ */
+
+.ram {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20vw;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.ram-texte {
+  width: 40vw;
+}
+
+.ram-img {
+  width: 25vw;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ----------------------------------- EQUIPE ----------------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+.equipe {
+  position: relative;
+  padding: 4vw 0;
+  margin-top: 18vw;
+  background-color: #cc9dc8;
+}
+
+.equipe-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.equipe-intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.texte-equipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40vw;
+}
+
+.texte-equipe p {
+  width: 30vw;
+}
+
+.button {
+  border: solid 2px white;
+  border-radius: 3px;
+  margin-top: 2vw;
+  padding: 1vw 2vw;
+  transition: ease 0.2s;
+  text-decoration: none;
+  font-family: 'Kodchasan';
+  font-weight: bold;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button:hover {
+  padding: 1vw 3vw;
+  transition: ease 0.2s;
+  text-decoration: none;
+}
+
+.equipe-profil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 2vw;
+  transition: ease 0.8s;
+}
+
+.equipe-profil.active {
+  height: 50vw;
+}
+
+.profil-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin-top: 4vw;
+}
+
+.profil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 20vw;
+  color: white;
+}
+
+.profil a {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 9000;
+  width: 15vw;
+}
+
+.profil img {
+  width: 10vw;
+  height: 10vw;
+  border: solid 2px #f4d3f4;
+  border-radius: 50%;
+  transition: ease 0.7s;
+}
+
+.profil a span {
+  position: absolute;
+  top: 42%;
+  transition: ease 0.7s;
+  font-size: 1.5rem;
+  color: transparent;
+}
+
+.profil a:hover img {
+  border-radius: 0;
+  filter: brightness(0.6);
+}
+
+.profil a:hover span {
+  color: white;
+}
+
+.profil p {
+  margin-top: 2vw;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.profil p span {
+  font-size: 0.9rem;
+}
+
+.vague-move-haut-equipe {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: -100%;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+
+.equipe-vh1 {
+  position: absolute;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background-size: 100vw;
+  background-image: url(../images/vagues/vague-orange-haut-bis.svg);
+  animation: move_wave2 15s linear infinite;
+  background-repeat: repeat no-repeat;
+  background-position: bottom;
+  transform-origin: center bottom;
+  opacity: 0.5;
+}
+
+.equipe-vh2 {
+  background-size: 100vw;
+  background-image: url(../images/vagues/vague-violet-haut.svg);
+  animation: move_wave 15s linear infinite;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: bottom;
+  transform-origin: center bottom;
+}
+
+.equipe-vb1 {
+  position: absolute;
+  animation: move_wave2 15s linear infinite;
+  transform-origin: center top;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background-size: 100vw;
+  background-image: url(../images/vagues/vague-jaune-bas.svg);
+  background-repeat: repeat no-repeat;
+  background-position: top;
+  opacity: 0.5;
+}
+
+.equipe-vb2 {
+  position: absolute;
+  left: 0;
+  top: -1%;
+  width: 200%;
+  height: 100%;
+  animation: move_wave 15s linear infinite;
+  transform-origin: center top;
+  background-size: 100vw;
+  background-image: url(../images/vagues/vague-violet-bas.svg);
+  background-repeat: repeat no-repeat;
+  background-position: top;
+}
+
+/* --------------------------------- ANIM BUBBLE ----------------------------------------- */
+
+.bubbl {
+  position: relative;
+  width: 20vw;
+  height: 20vw;
+}
+
+[class^=bubbl-img] {
+  position: absolute;
+}
+
+@keyframes bubbl-anim {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.5vw);
+  }
+}
+
+.bubbl-img-bulle-1 {
+  animation: bubbl-anim 3s infinite ease;
+}
+
+.bubbl-img-bulle-2 {
+  animation: bubbl-anim 2s 0.3s infinite ease;
+}
+
+.bubbl-img-bulle-3 {
+  animation: bubbl-anim 4s 0.4s infinite linear;
+}
+
+.bubbl-img-bulle-4 {
+  animation: bubbl-anim 2s 0.6s infinite linear;
+}
+
+.bubbl-img-bulle-5 {
+  animation: bubbl-anim 3s 0.7s infinite ease;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ----------------------------------- FOOTER ----------------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 17vw;
+}
+
+.losange-titre-footer {
+  position: relative;
+  z-index: 1;
+  left: -1vw;
+  width: 3vw;
+}
+
+.store3 {
+  display: flex;
+  justify-content: space-around;
+  width: 40vw;
+  margin-top: 50px;
+}
+
+.store3 img {
+  position: relative;
+  width: 12vw;
+  margin: 1vw 0;
+  border: solid #dddddd 1px;
+  transition: ease 0.3s;
+  box-shadow: 6px 5px 1px #ffbb99;
+}
+
+.store3 img:hover {
+  transition: ease 0.3s;
+  box-shadow: 0 0 0 #ffbb99;
+}
+
+.facebook {
+  width: 5vw;
+  margin-top: 50px;
+  transition: ease 0.3s;
+}
+
+.facebook:hover {
+  transform: rotate(20deg);
+}
+
+.end {
+  position: relative;
+  margin-top: 5vw;
+  font-size: 0.8rem;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- MEDIA QUERIES ----------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- 1200 ----------------------------------- */
+
+@media screen and (max-width: 1200px) {
+  /* - HEADER - */
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .store {
+    top: 16vw;
+  }
+  .login a {
+    font-size: 1.2rem;
+  }
+  .nav {
+    width: 25vw;
+  }
+  .input-mail {
+    font-size: 0.6rem;
+  }
+  .store a {
+    width: 40%;
+  }
+  /* - INTRO - */
+  .texte-intro {
+    font-size: 0.9rem;
+    width: 35vw;
+  }
+  .mockup2 {
+    width: 30vw;
+  }
+  /* FONCTION */
+  .fonction [class^=fonction] {
+    width: 30vw;
+  }
+  /* HUMAIN */
+  .humain-content-texte {
+    width: 70vw;
+  }
+  /* EQUIPE */
+  .equipe-intro {
+    width: 80vw;
+  }
+  .bubble {
+    width: 30vw;
+  }
+  .bubble img {
+    width: 30vw;
+  }
+  .profil-line {
+    margin-right: 5vw;
+  }
+  .profil p {
+    font-size: 1rem;
+  }
+  .profil p span {
+    font-size: 0.8rem;
+  }
+  .profil a span {
+    font-size: 1rem;
+  }
+}
+
+/* ---------------------------------- 992 ----------------------------------- */
+
+@media screen and (max-width: 992px) {
+  /* - HEADER - */
+  .logo img {
+    width: 6vw;
+  }
+  .store {
+    top: 20vw;
+  }
+  .login {
+    width: 30%;
+  }
+  .mockup1 {
+    width: 20vw;
+  }
+  .nav {
+    width: 30vw;
+  }
+  .nav [class^=menu] img {
+    width: 6vw;
+  }
+  .store2 {
+    width: 30vw;
+  }
+  .store2 img {
+    width: 12vw;
+  }
+  .input-mail {
+    font-size: 0.5rem;
+  }
+  /* - INTRO - */
+  .vague-move {
+    top: -30%;
+  }
+  .losange-titre {
+    width: 4vw;
+  }
+  .losange-titre-footer {
+    width: 4vw;
+  }
+  /* FONCTION */
+  .fonction [class^=fonction] {
+    width: 30vw;
+    font-size: 0.9rem;
+  }
+  /* HUMAIN */
+  .humain-content-texte {
+    width: 70vw;
+    font-size: 0.9rem;
+  }
+  /* RAM */
+  .ram h3 {
+    width: 50vw;
+  }
+  /* EQUIPE */
+  .equipe-intro {
+    margin-right: 15vw;
+  }
+  .texte-equipe {
+    font-size: 0.9rem;
+  }
+  .equipe-profil.active {
+    height: 60vw;
+  }
+  .profil p span {
+    font-size: 0.7rem;
+  }
+  /* FOOTER */
+  .store3 img {
+    width: 15vw;
+    margin: 0 4vw;
+  }
+  .facebook {
+    width: 8vw;
+  }
+}
+
+/* ---------------------------------- 768 ----------------------------------- */
+
+@media screen and (max-width: 768px) {
+  /* - HEADER - */
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    width: 70vw;
+    margin: 6vw 0;
+  }
+  .store {
+    justify-content: space-around;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 55vw;
+    height: 30vw;
+  }
+  .store img {
+    margin: 0;
+  }
+  .mockup1 {
+    width: 50vw;
+    margin-top: 5vw;
+  }
+  .login {
+    display: none;
+  }
+  .nav {
+    display: none;
+  }
+  .nav-mobile {
+    display: block;
+  }
+  .losange9 {
+    left: 1vw;
+    top: 70vw;
+  }
+  .losange10 {
+    left: 97vw;
+  }
+  /* - INTRO - */
+  .losange-titre {
+    width: 5vw;
+    left: 2vw;
+  }
+  .losange-titre-footer {
+    width: 5vw;
+    left: -2vw;
+  }
+  .intro {
+    top: 20vw;
+    padding-top: 10vw;
+  }
+  .mailing {
+    left: 7vw;
+  }
+  .input-mail {
+    width: 70vw;
+    height: 7vw;
+    padding-left: 2vw;
+    font-size: 1rem;
+  }
+  .input-submit {
+    width: 15vw;
+  }
+  .intro-content {
+    flex-direction: column;
+  }
+  .mockup2 {
+    width: 50vw;
+  }
+  .store2 {
+    display: none;
+  }
+  .texte-intro {
+    width: 70vw;
+    margin-right: 0;
+  }
+  /* - FONCTION - */
+  .fonction {
+    margin-top: 20vw;
+    flex-direction: column;
+  }
+  .fonction [class^=fonction] {
+    width: 70%;
+    margin: 3vw 0;
+    font-size: 1rem;
+  }
+  .fonction-orange {
+    left: 0;
+  }
+  .fonction-rose {
+    top: 0;
+  }
+  .fonction-violet {
+    left: 0;
+  }
+  /* HUMAIN */
+  .humain-content-texte {
+    flex-direction: column;
+    width: 80vw;
+  }
+  .humain-content-texte p {
+    width: 100%;
+  }
+  /* RAM */
+  .ram {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ram-texte {
+    width: 70vw;
+    align-items: center;
+  }
+  .ram-texte h3 {
+    margin: auto;
+  }
+  .ram-texte p {
+    width: 50vw;
+    margin: 5vw auto;
+  }
+  .ram-img {
+    width: 40vw;
+  }
+  /* EQUIPE */
+  .equipe-intro {
+    flex-direction: column;
+    align-items: center;
+    margin: 5vw auto;
+  }
+  .bubble {
+    width: 40vw;
+    height: 30vw;
+  }
+  .bubble img {
+    width: 40vw;
+  }
+  .texte-equipe {
+    width: 70vw;
+    height: 50vw;
+  }
+  .texte-equipe p {
+    width: 70vw;
+  }
+  .button {
+    font-size: 1.1rem;
+    padding: 1vw 2vw;
+  }
+  .equipe-profil {
+    transition: 0.1 ease;
+  }
+  .equipe-profil.active {
+    height: 270vw;
+  }
+  .profil-line {
+    flex-direction: column;
+    margin: 0;
+  }
+  .profil {
+    width: 70vw;
+    overflow: hidden;
+  }
+  .profil img {
+    width: 30vw;
+    height: 30vw;
+  }
+  .profil p {
+    margin-top: 4vw;
+    font-size: 1.3rem;
+  }
+  .profil p span {
+    margin-bottom: 3vw;
+    font-size: 1rem;
+  }
+  .profil a {
+    width: 30vw;
+  }
+  .profil a span {
+    font-size: 1.4rem;
+  }
+  /* FOOTER */
+  .store3 img {
+    width: 20vw;
+    margin: 0 4vw;
+  }
+  .facebook {
+    width: 10vw;
+    margin-top: 4vw;
+  }
+}
+
+/* ---------------------------------- 756 ----------------------------------- */
+
+@media screen and (max-width: 576px) {
+  /* - HEADER - */
+  h2 {
+    font-size: 1.2rem;
+  }
+  .logo img {
+    width: 10vw;
+  }
+  .store {
+    width: 80vw;
+    height: 55vw;
+  }
+  /* INTRO */
+  .intro {
+    padding-bottom: 6vw;
+    padding-top: 15vw;
+  }
+  .input-mail {
+    font-size: 0.6rem;
+  }
+  .input-submit {
+    width: 18vvw;
+  }
+  .losange-titre {
+    width: 10vw;
+    left: 3vw;
+  }
+  .losange-titre-footer {
+    width: 10vw;
+    left: -5vw;
+  }
+  /* FONCTION */
+  .fonction [class^=fonction] {
+    width: 85vw;
+  }
+  /* HUMAIN */
+  .humain {
+    padding: 5vw 0;
+  }
+  /* RAM */
+  .ram-texte {
+    width: 90vw;
+  }
+  .ram-texte p {
+    width: 80vw;
+  }
+  .ram-texte h3 {
+    width: 80vw;
+    font-size: 1.5rem;
+  }
+  /* EQUIPE */
+  .equipe h3 {
+    font-size: 1.7rem;
+  }
+  .bubble {
+    width: 50vw;
+    height: 40vw;
+  }
+  .bubble img {
+    width: 50vw;
+  }
+  .texte-equipe {
+    height: 110vw;
+  }
+  .equipe-profil.active {
+    height: 350vw;
+  }
+  .profil a {
+    width: 50vw;
+  }
+  /* FOOTER */
+  footer h3 {
+    position: relative;
+    left: 3vw;
+    font-size: 1.5rem;
+    margin-top: 4vw;
+  }
+  .store3 img {
+    width: 30vw;
+    margin: 0 4vw;
+  }
+  .end {
+    font-size: 0.5rem;
+  }
+}

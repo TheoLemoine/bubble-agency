@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('../fonts/kodchasan/Kodchasan-ExtraLight.woff2') format('woff2'),
+  url('../fonts/kodchasan/Kodchasan-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0 0;
+}
+
+body {
+  width: 100%;
+  background-color: #ffffff;
+  font-family: 'Kodchasan', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2vw;
+  background-color: #fee9ff;
+}
+
+header img {
+  width: 5vw;
+  margin-right: 2vw;
+}
+
+p {
+  max-width: 70%;
+  margin: 5vw auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  header img {
+    width: 8vw;
+  }

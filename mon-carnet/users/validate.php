@@ -38,15 +38,30 @@ $ok = $stm->execute([
 ?>
 
 <!doctype html>
-<html lang="fr">
-<head>
+  <html lang="fr">
+
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Votre compte à bien été ajouté</h1>
-</body>
-</html>
+    <title>Merci de votre inscription</title>
+    <link rel="stylesheet" href="../../css/style-validate.css">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-16x16.png" sizes="16x16" />
+  </head>
+
+  <body>
+
+    <header>
+
+      <img src="../../images/logo/logo-app.svg">
+      <h1>Mon Carnet d'assmat</h1>
+
+    </header>
+
+
+    <p>Votre compte à bien été ajouté.<br/> Le responsable de votre RAM devra valider votre demande.<br/> Vous pourrez vous connecter une fois fait et accéder au blog de "Mon Carnet d'assmat".</p>
+    
+  </body>
+
+  </html>

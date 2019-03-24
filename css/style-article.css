@@ -1,0 +1,317 @@
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('../fonts/kodchasan/Kodchasan-ExtraLight.woff2') format('woff2'),
+  url('../fonts/kodchasan/Kodchasan-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0 0;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  font-family: 'Kodchasan', sans-serif;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- HEADER ------------------------------------------ */
+
+/* ------------------------------------------------------------------------------------ */
+
+header {
+  position: relative;
+  overflow-x: hidden;
+  z-index: 2;
+  margin: 0 0;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2vw;
+}
+
+.logo img {
+  width: 4vw;
+}
+
+.parametres {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: hidden;
+  margin: 0 4vw;
+}
+
+.parametres a {
+  position: relative;
+  overflow-x: hidden;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.parametres a::before,
+.parametres a::after {
+  content: '';
+  position: absolute;
+  top: 90%;
+  width: 50%;
+  transition: ease 0.3s;
+  border-bottom: solid black 2px;
+}
+
+.parametres a::before {
+  left: -50%;
+}
+
+.parametres a::after {
+  left: 100%;
+}
+
+.parametres a:hover:before {
+  left: 0;
+}
+
+.parametres a:hover:after {
+  left: 50%;
+}
+
+.h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1 span {
+  z-index: 5;
+}
+
+.losange-titre {
+  position: relative;
+  left: 0.7vw;
+  top: 0.1vw;
+  width: 2vw;
+  z-index: 1;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- MAIN ------------------------------------------ */
+
+/* ------------------------------------------------------------------------------------ */
+
+main {
+  width: 70vw;
+  margin: 5vw auto;
+}
+
+.retour-accueil {
+  border: solid 2px #fee9ff;
+  border-radius: 10px;
+  padding: 5px 10px;
+  transition: 0.3s ease;
+  text-decoration: none;
+  color: black;
+  background-color: #fee9ff;
+}
+
+.retour-accueil:hover {
+  background-color: transparent;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 4vw;
+  padding: 3vw 0;
+  border: solid 3px #5b2c5b;
+}
+
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- FOOTER ------------------------------------------ */
+
+/* ------------------------------------------------------------------------------------ */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 18vw;
+  padding-top: 5vw;
+  background-color: #f4d3f4;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+h3 span {
+  position: relative;
+  z-index: 5;
+}
+
+.vague {
+  position: absolute;
+  top: -8vw;
+}
+
+.losange-titre-footer {
+  position: relative;
+  z-index: 1;
+  left: -1vw;
+  width: 3vw;
+}
+
+.store {
+  display: flex;
+  justify-content: space-around;
+  width: 40vw;
+  margin-top: 50px;
+}
+
+.store img {
+  position: relative;
+  width: 12vw;
+  margin: 1vw 0;
+  border: solid #dddddd 1px;
+  transition: ease 0.3s;
+  box-shadow: 6px 5px 1px #aaaaaa;
+}
+
+.store img:hover {
+  transition: ease 0.3s;
+  box-shadow: 0 0 0 #aaaaaa;
+}
+
+.facebook {
+  width: 5vw;
+  margin-top: 50px;
+  transition: ease 0.3s;
+}
+
+.facebook:hover {
+  transform: rotate(20deg);
+}
+
+.end {
+  position: relative;
+  margin-top: 5vw;
+  font-size: 0.8rem;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- MEDIA QUERIES ----------------------------------- */
+
+/* ------------------------------------------------------------------------------------ */
+
+/* ---------------------------------- 1200 ----------------------------------- */
+
+@media screen and (max-width: 1200px) {}
+
+/* ---------------------------------- 992 ----------------------------------- */
+
+@media screen and (max-width: 992px) {
+  /* HEADER */
+  .logo img {
+    width: 6vw;
+  }
+  .losange-titre {
+    width: 4vw;
+  }
+  .losange-titre-footer {
+    width: 4vw;
+  }
+  /* MAIN */
+  main {
+    width: 80%;
+  }
+  /* FOOTER */
+  .store img {
+    width: 15vw;
+    margin: 0 4vw;
+  }
+  .facebook {
+    width: 8vw;
+  }
+}
+
+/* ---------------------------------- 768 ----------------------------------- */
+
+@media screen and (max-width: 768px) {
+  /* HEADER */
+  h1 span {
+    font-size: 1.5rem;
+  }
+  /* MAIN */
+  main {
+    width: 85%;
+    padding: 2vw;
+  }
+  /* FOOTER */
+  .store img {
+    width: 20vw;
+    margin: 0 4vw;
+  }
+  .facebook {
+    width: 10vw;
+    margin-top: 4vw;
+  }
+}
+
+/* ---------------------------------- 576 ----------------------------------- */
+
+@media screen and (max-width: 576px) {
+  /* HEADER */
+  .logo img {
+    width: 10vw;
+  }
+  .losange-titre {
+    width: 10vw;
+    left: 3vw;
+  }
+  .losange-titre-footer {
+    width: 10vw;
+    left: -5vw;
+  }
+  .parametres a {
+    font-size: 0.8rem;
+  }
+  /* MAIN */
+  /* FOOTER */
+  h3 {
+    position: relative;
+    left: 3vw;
+    font-size: 1.5rem;
+    margin-top: 4vw;
+  }
+  .store img {
+    width: 30vw;
+    margin: 0 4vw;
+  }
+  .end {
+    font-size: 0.5rem;
+  }
+}
