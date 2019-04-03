@@ -663,8 +663,16 @@ h3 span {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 60vw;
-  margin-top: 2vw;
+  margin-top: 4vw;
+}
+
+.video{
+  width: 40%;
+  height: 140%;
+  border: none;
+  border-radius: 20px;
 }
 
 .humain-content-texte p {
@@ -1005,7 +1013,11 @@ footer {
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-top: 17vw;
+  margin-top: 10vw;
+}
+
+.footer-h3{
+  font-size: 1.5rem;
 }
 
 .losange-titre-footer {
@@ -1018,27 +1030,26 @@ footer {
 .store3 {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 40vw;
-  margin-top: 50px;
+  margin-top: 1vw;
 }
 
-.store3 img {
+.footer-store {
   position: relative;
-  width: 12vw;
-  margin: 1vw 0;
+  width: 7vw;
   border: solid #dddddd 1px;
   transition: ease 0.3s;
   box-shadow: 6px 5px 1px #ffbb99;
 }
 
-.store3 img:hover {
+.footer-store:hover {
   transition: ease 0.3s;
   box-shadow: 0 0 0 #ffbb99;
 }
 
 .facebook {
-  width: 5vw;
-  margin-top: 50px;
+  width: 3vw;
   transition: ease 0.3s;
 }
 
@@ -1047,8 +1058,7 @@ footer {
 }
 
 .end {
-  position: relative;
-  margin-top: 5vw;
+  margin-top: 2vw;
   font-size: 0.8rem;
 }
 
@@ -1192,12 +1202,11 @@ footer {
     font-size: 0.7rem;
   }
   /* FOOTER */
-  .store3 img {
-    width: 15vw;
-    margin: 0 4vw;
+  .footer-store {
+    width: 8vw;
   }
   .facebook {
-    width: 8vw;
+    width: 4vw;
   }
 }
 
@@ -1308,6 +1317,10 @@ footer {
   .humain-content-texte p {
     width: 100%;
   }
+  .video{
+    margin-top: 3vw;
+    width: 50%;
+  }
   /* RAM */
   .ram {
     flex-direction: column;
@@ -1352,7 +1365,7 @@ footer {
     padding: 1vw 2vw;
   }
   .equipe-profil {
-    transition: 0.1 ease;
+    transition: 0.1s ease;
   }
   .equipe-profil.active {
     height: 270vw;
@@ -1384,13 +1397,14 @@ footer {
     font-size: 1.4rem;
   }
   /* FOOTER */
-  .store3 img {
-    width: 20vw;
-    margin: 0 4vw;
+  .store3{
+    width: 60vw;
+  }
+  .footer-store {
+    width: 15vw;
   }
   .facebook {
-    width: 10vw;
-    margin-top: 4vw;
+    width: 6vw;
   }
 }
 
@@ -1417,7 +1431,7 @@ footer {
     font-size: 0.6rem;
   }
   .input-submit {
-    width: 18vvw;
+    width: 18vw;
   }
   .losange-titre {
     width: 10vw;
@@ -1434,6 +1448,9 @@ footer {
   /* HUMAIN */
   .humain {
     padding: 5vw 0;
+  }
+  .video{
+    width: 75%;
   }
   /* RAM */
   .ram-texte {
@@ -1467,15 +1484,11 @@ footer {
     width: 50vw;
   }
   /* FOOTER */
-  footer h3 {
+  .footer-h3 {
     position: relative;
     left: 3vw;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 4vw;
-  }
-  .store3 img {
-    width: 30vw;
-    margin: 0 4vw;
   }
   .end {
     font-size: 0.5rem;

@@ -53,7 +53,7 @@ $posts = $stm->fetchAll(PDO::FETCH_CLASS, Post::class);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mon Carnet d'assmat - Espace RAM</title>
+    <title>Mon Carnet d'Assmat - Espace RAM</title>
     <link rel="stylesheet" href="../css/style-backoffice-accueil.css">
     <link rel="icon" type="image/png" href="../images/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="../images/favicon/favicon-16x16.png" sizes="16x16" />
@@ -69,7 +69,7 @@ $posts = $stm->fetchAll(PDO::FETCH_CLASS, Post::class);
 
       <div class="title">
         <img src="../images/logo/logo-app.svg">
-        <h1>Mon Carnet d'assmat</h1>
+        <h1>Mon Carnet d'Assmat</h1>
       </div>
 
       <h2>RAM de Bry-sur-Marne</h2>
@@ -87,7 +87,7 @@ $posts = $stm->fetchAll(PDO::FETCH_CLASS, Post::class);
         <a href="users.php">Liste des assmats</a>
       </nav>
 
-      <p class="first-line">Vous etes connecté(e) au
+      <p class="first-line">Vous êtes connecté(e) au
         <?= htmlspecialchars($_SESSION['ram']->login) ?>
       </p>
 
@@ -146,8 +146,9 @@ $posts = $stm->fetchAll(PDO::FETCH_CLASS, Post::class);
         <p>
           <?= htmlspecialchars($post->texte) ?>
         </p>
+        <a href="posts/erase.php?uid=<?= htmlspecialchars($post->id) ?>" class="supprimer">Supprimer</a>
       </div>
-
+       
       <?php endforeach; ?>
     </div>
 

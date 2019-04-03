@@ -40,6 +40,8 @@ header {
 
 .title{
   display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .title img {
@@ -189,6 +191,28 @@ button[type=submit] {
   background-color: #ffbb99;
 }
 
+h3{
+  font-size: 1.5rem;
+}
+
+.article-publie p{
+  margin-bottom: 3vw;
+}
+
+.supprimer{
+  padding: 0.5vw 1vw;
+  border-radius: 10px;
+  transition: 0.2s ease;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+}
+
+.supprimer:hover{
+  background-color: black;
+  color: white;
+}
+
 /* ------------------------------------------------------------------------------------ */
 
 /* ---------------------------------- MEDIA QUERIES ----------------------------------- */
@@ -227,7 +251,7 @@ button[type=submit] {
     font-size: 1.4rem;
   }
   header img {
-    width: 8vw;
+    width: 10vw;
   }
   /* MAIN */
   .fat{
@@ -247,6 +271,12 @@ button[type=submit] {
   }
   .box-article{
     width: 85%;
+  }
+  .article-publie p{
+    margin-bottom: 6vw;
+  }
+  .supprimer{
+    font-size: 0.9rem;
   }
 }
 

@@ -31,7 +31,9 @@ $posts = $stm->fetchAll(PDO::FETCH_CLASS, Post::class);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mon Carnet d'assmat - Le blog</title>
+    <meta name="description" content="Venez découvrir les actualités de votre RAM et découvrez notre application Mon Carnet d'Assmat">
+    <meta name="keywords" content="carnet, carnets, carnet d'assmat, mon carnet d'assmat, mon carnet, assmat, assmats, asmat, asmats, assitantes, assistante, asistante, asistantes, maternel, maternelle, maternels, maternelles, maternnelle, maternnel, assitant maternel, assistante maternelle, assistants maternels, assistantes maternelles, RAM, relais, relais d'assistantes maternelles, relais d'assistante maternelle, blog, lié au RAM, article, articles, nouveauté, nouveautée, nouveautés, nouveautées, enfant, enfants, enfance, nourrice, nounou, nourice, gestion, gestionner, organisation, organiser, quotidien, quotidienne, app, application, mobile, application mobile">
+    <title>Mon Carnet d'Assmat - Le blog</title>
     <link rel="stylesheet" href="../css/style-blog.css">
     <link rel="icon" type="image/png" href="../images/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="../images/favicon/favicon-16x16.png" sizes="16x16" />
@@ -56,7 +58,7 @@ $posts = $stm->fetchAll(PDO::FETCH_CLASS, Post::class);
 
       <div class="parametres">
         <a href="../index.html" class="site">Retour au site</a>
-        <a href="users/edit.php">Modifier vos informations</a>
+<!--        <a href="users/edit.php">Modifier vos informations</a>-->
       </div>
 
     </header>
@@ -67,7 +69,7 @@ $posts = $stm->fetchAll(PDO::FETCH_CLASS, Post::class);
 
     <main>
 
-      <p>Vous etes connecté(e) en tant que
+      <p>Vous êtes connecté(e) en tant que
         <?= htmlspecialchars($_SESSION['user']->prenom . ' ' . $_SESSION['user']->nom) ?>
       </p>
 
@@ -80,7 +82,7 @@ $posts = $stm->fetchAll(PDO::FETCH_CLASS, Post::class);
                 <?= htmlspecialchars($post->titre) ?>
               </h2>
               <p>
-                <?= substr(htmlspecialchars($post->texte), 0, 200) . '...'?>
+                <?= substr(htmlspecialchars($post->texte), 0, 200) . '   ... Lire plus '?>
               </p>
             </div>
           </a>
@@ -98,12 +100,12 @@ $posts = $stm->fetchAll(PDO::FETCH_CLASS, Post::class);
     <footer>
       <img src="../images/vagues/vague-rose-haut.svg" class="vague" alt="">
 
-      <h3><span>Téléchargez l'application</span><img src="../images/losanges/losange-violet-creux.svg" class="losange-titre-footer" alt=""></h3>
-      <div class="store">
-        <a href="#"><img src="../images/store/google-play.png" alt="lien google play"></a>
-        <a href="#"><img src="../images/store/play-store.png" alt="lien play store"></a>
-      </div>
+    <h3><span class="footer-h3">Téléchargez l'application</span><img src="../images/losanges/losange-violet-creux.svg" class="losange-titre-footer" alt=""></h3>
+    <div class="store">
+      <a href="#"><img src="../images/store/google-play.png" alt="lien google play" class="footer-store"></a>
       <a href="https://www.facebook.com/BubbleAgency77/" target="_blank"><img src="../images/icones-footer/facebook.svg" class="facebook" alt="lien facebook"></a>
+      <a href="#"><img src="../images/store/play-store.png" alt="lien play store" class="footer-store"></a>
+    </div>
 
       <p class="end">Conçu, créé, designé et dévelopé par Bubble Agency, tout droits réservés.</p>
     </footer>

@@ -138,8 +138,9 @@ main {
   justify-content: space-around;
   width: 100%;
   margin-top: 4vw;
-  padding: 3vw 0;
+  padding: 3vw 5vw;
   border: solid 3px #5b2c5b;
+  text-align: center;
 }
 
 
@@ -154,8 +155,7 @@ footer {
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-top: 18vw;
-  padding-top: 5vw;
+  margin-top: 10vw;
   background-color: #f4d3f4;
 }
 
@@ -164,7 +164,7 @@ h3 {
   justify-content: center;
   align-items: center;
   margin-top: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 h3 span {
@@ -180,34 +180,33 @@ h3 span {
 .losange-titre-footer {
   position: relative;
   z-index: 1;
-  left: -1vw;
+  left: -1.5vw;
   width: 3vw;
 }
 
 .store {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 40vw;
-  margin-top: 50px;
+  margin-top: 1vw;
 }
 
-.store img {
+.footer-store {
   position: relative;
-  width: 12vw;
-  margin: 1vw 0;
+  width: 7vw;
   border: solid #dddddd 1px;
   transition: ease 0.3s;
   box-shadow: 6px 5px 1px #aaaaaa;
 }
 
-.store img:hover {
+.footer-store:hover {
   transition: ease 0.3s;
   box-shadow: 0 0 0 #aaaaaa;
 }
 
 .facebook {
-  width: 5vw;
-  margin-top: 50px;
+  width: 2vw;
   transition: ease 0.3s;
 }
 
@@ -216,8 +215,7 @@ h3 span {
 }
 
 .end {
-  position: relative;
-  margin-top: 5vw;
+  margin-top: 2vw;
   font-size: 0.8rem;
 }
 
@@ -226,10 +224,6 @@ h3 span {
 /* ---------------------------------- MEDIA QUERIES ----------------------------------- */
 
 /* ------------------------------------------------------------------------------------ */
-
-/* ---------------------------------- 1200 ----------------------------------- */
-
-@media screen and (max-width: 1200px) {}
 
 /* ---------------------------------- 992 ----------------------------------- */
 
@@ -249,12 +243,11 @@ h3 span {
     width: 80%;
   }
   /* FOOTER */
-  .store img {
-    width: 15vw;
-    margin: 0 4vw;
+  .footer-store {
+    width: 8vw;
   }
   .facebook {
-    width: 8vw;
+    width: 4vw;
   }
 }
 
@@ -271,13 +264,14 @@ h3 span {
     padding: 2vw;
   }
   /* FOOTER */
-  .store img {
-    width: 20vw;
-    margin: 0 4vw;
+   .store{
+    width: 60vw;
+  }
+  .footer-store {
+    width: 15vw;
   }
   .facebook {
-    width: 10vw;
-    margin-top: 4vw;
+    width: 6vw;
   }
 }
 
@@ -299,17 +293,12 @@ h3 span {
   .parametres a {
     font-size: 0.8rem;
   }
-  /* MAIN */
   /* FOOTER */
   h3 {
     position: relative;
     left: 3vw;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 4vw;
-  }
-  .store img {
-    width: 30vw;
-    margin: 0 4vw;
   }
   .end {
     font-size: 0.5rem;

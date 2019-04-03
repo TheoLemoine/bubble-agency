@@ -40,6 +40,8 @@ header {
 
 .title{
   display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .title img {
@@ -107,6 +109,7 @@ h3 {
 .cadre {
   width: 40%;
   margin-top: 2vw;
+  margin-bottom: 5vw;
   border: solid 2px #a0a0a0;
   background-color: #eeeeee;
 }
@@ -138,12 +141,6 @@ h3 {
 
 /* ------------------------------------------------------------------------------------ */
 
-/* ---------------------------------- 1200 ----------------------------------- */
-
-@media screen and (max-width: 1200px) {
-  /* MAIN */
-}
-
 /* ---------------------------------- 992 ----------------------------------- */
 
 @media screen and (max-width: 992px) {
@@ -161,16 +158,10 @@ h3 {
     font-size: 1.4rem;
   }
   header img {
-    width: 8vw;
+    width: 10vw;
   }
   /* MAIN */
   .cadre{
     width: 85%;
   }
-}
-
-/* ---------------------------------- 576 ----------------------------------- */
-
-@media screen and (max-width: 576px) {
-  /* MAIN */
 }
