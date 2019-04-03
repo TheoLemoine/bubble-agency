@@ -143,6 +143,9 @@ main {
   text-align: center;
 }
 
+.content {
+  text-align: left;
+}
 
 /* ------------------------------------------------------------------------------------ */
 
@@ -264,7 +267,7 @@ h3 span {
     padding: 2vw;
   }
   /* FOOTER */
-   .store{
+  .store {
     width: 60vw;
   }
   .footer-store {

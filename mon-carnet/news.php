@@ -20,8 +20,6 @@ $stm->execute([
     ':id' => $_GET['id'],
 ]);
 $post = $stm->fetchObject(Post::class);
-var_dump($_SESSION['user']->ram_id);
-var_dump($post->ram_id);
 
 if($_SESSION['user']->ram_id !== $post->ram_id)
 {
@@ -82,7 +80,7 @@ if($_SESSION['user']->ram_id !== $post->ram_id)
         <h2>
           <?= htmlspecialchars($post->titre) ?>
         </h2>
-        <p>
+        <p class="content">
           <?= htmlspecialchars($post->texte) ?>
         </p>
       </div>
