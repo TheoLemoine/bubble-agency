@@ -50,7 +50,7 @@ $users = $stm->fetchAll(PDO::FETCH_CLASS, User::class);
         <h1>Mon Carnet d'Assmat</h1>
       </div>
 
-      <h2>RAM de Bry-sur-Marne</h2>
+      <h2><?= htmlspecialchars($_SESSION['ram']->login) ?></h2>
 
     </header>
 

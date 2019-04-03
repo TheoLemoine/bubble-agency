@@ -38,7 +38,7 @@ $stm->execute([
 $users = $stm->fetchAll(PDO::FETCH_CLASS, User::class);
 
 // get all posts in ram
-$stm = $pdo->prepare('SELECT * FROM post WHERE ram_id=:ram_id');
+$stm = $pdo->prepare('SELECT * FROM post WHERE ram_id=:ram_id ORDER BY id DESC');
 $stm->execute([
     ':ram_id' => $_SESSION['ram']->id,
 ]);
@@ -72,7 +72,7 @@ $posts = $stm->fetchAll(PDO::FETCH_CLASS, Post::class);
         <h1>Mon Carnet d'Assmat</h1>
       </div>
 
-      <h2>RAM de Bry-sur-Marne</h2>
+      <h2><?= htmlspecialchars($_SESSION['ram']->login) ?></h2>
 
     </header>
 

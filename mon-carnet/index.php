@@ -16,7 +16,7 @@ if(!isset($_SESSION['user']))
 }
 
 // fetch posts linked
-$stm = $pdo->prepare('SELECT * FROM post WHERE ram_id=:ram_id');
+$stm = $pdo->prepare('SELECT * FROM post WHERE ram_id=:ram_id ORDER BY id DESC');
 $stm->execute([
     ':ram_id' => $_SESSION['user']->ram_id,
 ]);

@@ -15,11 +15,19 @@ if(!isset($_SESSION['user']))
 $pdo = get_pdo();
 
 // get all users in the RAM
-$stm = $pdo->prepare('SELECT * FROM post WHERE ram_id=:ram_id LIMIT 1');
+$stm = $pdo->prepare('SELECT * FROM post WHERE id=:id LIMIT 1');
 $stm->execute([
-    ':ram_id' => $_SESSION['user']->ram_id,
+    ':id' => $_GET['id'],
 ]);
 $post = $stm->fetchObject(Post::class);
+var_dump($_SESSION['user']->ram_id);
+var_dump($post->ram_id);
+
+if($_SESSION['user']->ram_id !== $post->ram_id)
+{
+    header('Location: index.php');
+    die;
+}
 
 ?>
 
